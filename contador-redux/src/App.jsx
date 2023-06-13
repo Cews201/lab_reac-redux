@@ -8,11 +8,13 @@ import { useDispatch, useSelector } from 'react-redux'
 
 function App() {
 
-  const counter = useSelector (state => state.counter);
+  const identificacion = useSelector(state => state.identificacion);
+
 
   return(
     <div>
-      <h1>Contador:{counter}</h1>
+      
+      <h1>Identificacion: {identificacion} </h1>
     </div>
   )
 }

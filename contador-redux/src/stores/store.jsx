@@ -1,24 +1,26 @@
 import {configureStore} from '@reduxjs/toolkit'
 
 const initialState = {
-    counter:0
+    identificacion:'',
+    correo:'',
+    token: '',
 };
 
-const counterReducer=(state=initialState, action)=>{
+const loginReducer=(state=initialState, action)=>{
     switch (action.type){
-        case'INCREMENT':
-            return {counter: state.counter + 1};
-        case'DECREMENT':
-            return {counter: state.counter - 1};
-        case'RESET':
-            return {counter: state.counter *0};
+        case "SET_IDENTIFICACION":
+            return {...state, identificacion: action.payload};
+        case "SET_CORREO":
+            return {...state, correo: action.payload};
+        case "SET_TOKEN":
+            return {...state, token: action.payload};
         default:
             return state;
     }
 };
 
 const store = configureStore({
-    reducer: counterReducer
+    reducer: loginReducer
 });
 
 export default store;
